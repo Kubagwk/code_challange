@@ -42,9 +42,9 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test tests/  # Specify the folder where your test files are located
 
-      # Optional: Upload test results (for debugging purposes or reporting)
-      - name: Upload Test Results (optional)
+      # Step 6: Upload the Playwright test report
+      - name: Upload Playwright HTML report
         uses: actions/upload-artifact@v3
         with:
-          name: playwright-test-results
-          path: test-results/  # Change this path if your test results are stored elsewhere
+          name: playwright-html-report
+          path: playwright-report/  # Path to the directory containing the report
