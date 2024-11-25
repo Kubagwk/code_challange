@@ -1,0 +1,55 @@
+Test Strategy for Sauce Labs Demo website
+
+1. Purpose of testing
+The goal of this test strategy is to make sure the website works well for logging in, adding products to the basket, and checking out. I want to test these features in different situations to ensure everything working properly and smoothly. Testing process will be focused on manual and automation tests.
+
+2. Scope of Testing
+The following features will be tested:
+a) Login functionality:
+- User authentication (different account types: standard_user, locked_out_user, problem_user, performance_glitch_user),
+- Validation for incorrect credentials.
+b) Displaying and adding products to basket:
+- Adding, updating, and removing items,
+- Displaying products.
+c) Checkout Process:
+- Delivery address,
+- Checkout and order confirmation.
+
+The following features will not be tested:
+a) Footer - hyperlinks are not working,
+b) Hamburger menu - only Log Out is important,
+c) Security and performance - this is a simple demo page.
+
+3. Testing Approach
+a) Manual Testing
+Manual testing will focus on basic areas to ensure the basic functionality is working as expected. Testing will verify the page layout and responsiveness on different devices and browsers. During tests input fields and buttons will be checked. Flow end-to-end will be verified manually.
+b) Automation Testing
+Automation testing will on most critical functionalities in the website. Testing script will be prepared in the Playwright tool. The tests will focus on the same functionalities as manual testing.
+c) Test Environment
+Browsers: Chrome, Firefox, Edge
+Testing tool: Playwright
+Connection Types: High-speed internet
+
+4. Entry and Exit Criteria
+a) Entry Criteria:
+- Application is stable and it is working properly,
+- Required test data is available (user accounts, products, checkout),
+- Test script is properly working.
+b) Exit Criteria:
+- All test cases have passed,
+- New issues are reported.
+
+5. Test Deliverables
+a) Test strategy document TestStrategy.txt,
+b) Manual test cases list ManualTestCases.txt,
+c) Test script.
+
+6. Tools and Technologies
+a) Manual Testing
+- Browsers (Chrome, Firefox, Edge)
+b) Automation Testing
+- Playwright
+
+7. Threats and risks:
+Missing tests for uncommon scenarios, only basic functionalities will be checked.
+A lot of data is mocked and not integrated with third-party payment systems.

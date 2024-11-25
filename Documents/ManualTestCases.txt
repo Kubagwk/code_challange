@@ -1,0 +1,175 @@
+Login Page
+
+1.Verify successful login with valid credentials.
+Given the user is on the login page
+When they enter valid credentials
+And clicks the "LOGIN" button
+Then they should be redirected to the product page.
+
+2.Verify login fails with invalid credentials.
+Given the user is on the login page
+When they enter invalid credentials
+And clicks the "LOGIN" button
+Then an error message should be displayed.
+
+3.Verify login fails when the username field is empty.
+Given the user is on the login page
+When they leave the username field blank and enter a valid password
+And clicks the "LOGIN" button
+Then an error message should prompt for a username.
+
+4.Verify login fails when the password field is empty.
+Given the user is on the login page
+When they enter a valid username and leave the password blank
+And clicks the "LOGIN" button
+Then an error message should prompt for a password.
+
+5.Verify the password is hidden by default.
+Given the user is on the login page
+When they type a password
+Then the password should be displayed as asterisks or dots.
+
+Product Page
+
+6.Verify all products are listed with names and prices.
+Given the user is logged in with standard user
+When they view the products page
+Then all products should display names, descriptions, prices, and images.
+
+7.Verify product page.
+Given the user is logged in with standard user
+When they select one of the products available on the page
+Then selected product display name, description, price and image.
+
+8.Verify products can be sorted by price (low to high).
+Given the user is on the available products page
+When they select "Price (low to high)" from the sort dropdown
+Then the products should be sorted properly.
+
+9.Verify products can be added to the cart.
+Given the user is on the available products page
+When they click the "ADD TO CART" button for a product
+Then the button "ADD TO CART" change to "REMOVE".
+
+10.Verify the available products quantity.
+Given the user is on the available products page
+When they click the "ADD TO CART" button for a product
+Then the product should be added to the cart.
+
+11.Verify the the products can be removed from cart on the avilable products page.
+Given the user is on the available products page with added products to the cart
+When they click the "REMOVE" button for a product
+Then the quantity of the products in the cart decrease.
+
+12.Verify products can be added to the cart from product page.
+Given the user is on the seperate product page
+When they click the "ADD TO CART" button for a product
+Then the product should be added to the cart.
+
+13.Verify the cart count updates when products are added.
+Given the user is on the available products page
+And the user adds a products to the cart
+When they view the cart icon
+Then the cart count should increase by one.
+
+Cart Page
+
+14.Verify products in the cart are listed correctly.
+Given the user is on the available products page
+And the user adds a products to the cart
+When they click to the cart icon
+Then all added products should be displayed with names, description, prices and quantity.
+
+15.Verify products can be removed from the cart.
+Given the user is on the cart page with added products
+When they click "REMOVE" button for a product
+Then the product should no longer appear in the cart.
+
+16.Verify the cart is empty after all items are removed.
+Given the user removes all products from the cart
+When they view the cart page
+Then no products should be available on the cart page.
+
+17.Verify use can continue shopping from cart.
+Given the user is on the cart page with added products
+When they click the "CONTINUE SHOPPING" button
+Then the user is on the available products page.
+
+18.Verify user can proceed to checkout.
+Given the user has items in the cart
+When they click "Checkout"
+Then they should be redirected to the checkout page.
+
+Checkout:Your Information Page
+
+19.Verify user can enter proper shipping information.
+Given the user is on the checkout user information page
+When they enter First Name, Last Name amd Zip/Postal Code
+And clicks the "CONTINUE" button
+Then they should proceed to the order summary.
+
+20.Verify error message when user enter incomplete data.
+Given the user is on the checkout user information page
+When they enter information in only two fields
+And clicks the "CONTINUE" button
+Then the proper error message with missing field is displayed.
+
+21. Verify user can cancel the checkout.
+Given the user is on the checkout user information page
+When they clicks the "CANCEL" button
+Then the user is on the available products page.
+
+Checkout:Overview Page
+
+22.Verify order products overview shows correct details.
+Given the user is on the order overview page
+When they review their order
+Then all product details, prices, and total amount should be accurate.
+
+22.Verify order overview additional information shows correct details.
+Given the user is on the order overview page
+When they review their order
+Then the Payment Information, Shipping Information, Item total price, Tax,  Total should be accurate with the products listed on the page.
+
+23.Verify order completion.
+Given the user is on the order summary page
+When they click the "FINISH" button
+Then a confirmation page should be displayed.
+
+24.Verify order cancellation.
+Given the user is on the order summary page
+When they clicks the "CANCEL" button
+Then the user is on the available products page.
+
+Different accounts users
+
+25.Verify login with locked user.
+Given the user is on the login page
+When they enter credentials for locked user
+And clicks the "LOGIN" button
+Then the proper error message is displayed.
+
+26.Verify login with problematic user.
+Given the user is on the login page
+When they enter credentials for problem user
+And clicks the "LOGIN" button
+Then they should be redirected to the products page with missing images.
+
+27.Verify login with performence glich user.
+Given the user is on the login page
+When they enter credentials for performence glich user
+And clicks the "LOGIN" button
+Then they should be redirected to the products page not imadietly but with delay.
+
+Other Features
+
+28.Verify the logout functionality works correctly.
+Given the user is logged in
+When they click the hamburger button
+And clicks the "Logout" button
+Then they should be redirected to the login page.
+
+29.Verify the page layout adapts to smaller screens.
+Given the user views the site on a mobile device (or simulate in the browser)
+When they navigate through pages
+Then the layout should adapt without issues.
